@@ -1,60 +1,173 @@
-# JUEGO-SECRETO-IA
-📌 Juego del Número Secreto
+Juego Secreto IA
 
-Un mini-juego interactivo desarrollado en HTML, CSS y JavaScript, donde el usuario intenta adivinar un número secreto entre 1 y un valor máximo definido (por defecto, 10). Cada intento muestra una pista para acercarse a la respuesta correcta.
+<p align="center">
+<strong>Un juego interactivo para poner a prueba tu intuición.</strong>
+</p> <p align="center">
+  <a href="https://juego-secreto-ia.vercel.app/">Jugar en línea</a>
+</p>
 
-🚀 Características
+Descripción
 
-🔢 Generación aleatoria de un número secreto sin repetir números previamente sorteados.
+Juego Secreto IA es un mini-juego web desarrollado con HTML, CSS y JavaScript. El objetivo es descubrir un número secreto generado aleatoriamente dentro de un rango definido. Después de cada intento, el juego ofrece una pista para indicar si el número secreto es mayor o menor que el valor introducido.
 
-🎯 El juego indica si el número ingresado es mayor o menor al número secreto.
+El proyecto fue creado como una práctica de desarrollo web frontend y como una experiencia sencilla, rápida y accesible para jugar directamente desde el navegador.
 
-🔄 Botón para reiniciar la partida.
+Demo
 
-✨ Interfaz visual limpia, con fondos, imágenes y tipografías modernas.
+Puedes probar la versión publicada aquí:
 
-✔️ Validación simple e intuitiva.
+Abrir Juego Secreto IA
 
-🛠️ Tecnologías utilizadas
+Características
 
-HTML5 — estructura del juego
+Característica
+Descripción
+Generación aleatoria
+El juego selecciona un número secreto dentro del rango establecido.
+Pistas durante la partida
+Después de cada intento, informa si el número secreto es mayor o menor.
+Control de intentos
+Evita repetir números que ya hayan sido probados durante la partida.
+Reinicio de partida
+Permite comenzar un nuevo juego en cualquier momento.
+Validación de datos
+Comprueba que el valor introducido sea válido y esté dentro del rango permitido.
+Interfaz responsive
+La pantalla puede adaptarse a diferentes tamaños de dispositivo.
+Diseño visual moderno
+Utiliza colores, fondos, imágenes y tipografías para crear una experiencia más atractiva.
 
-CSS3 — diseño, colores y distribución
 
-JavaScript — lógica principal del juego
 
-📂 Estructura del proyecto
+
+¿Cómo jugar?
+
+1.
+Abre la versión online del juego o ejecuta el proyecto localmente.
+
+2.
+Introduce un número entero entre 1 y 10.
+
+3.
+Presiona el botón Intentar.
+
+4.
+Lee la pista mostrada por el juego.
+
+5.
+Continúa probando números hasta encontrar el número secreto.
+
+6.
+Cuando termines, utiliza Nuevo juego para iniciar otra partida.
+
+
+Consejo: presta atención a las pistas para reducir rápidamente las posibilidades.
+
+Tecnologías utilizadas
+
+Tecnología
+Uso dentro del proyecto
+HTML5
+Define la estructura y los elementos de la interfaz.
+CSS3
+Controla el diseño, los colores, la distribución y la adaptación a pantallas pequeñas.
+JavaScript
+Implementa la lógica del juego, las validaciones y la interacción con el usuario.
+Vercel
+Publica la aplicación para que pueda utilizarse en línea.
+
+
+
+
+Estructura del proyecto
+
+Plain Text
+
+
 /
-├── index.html       # Interfaz principal
-├── style.css        # Estilos y diseño visual
-├── app.js           # Lógica del juego
-└── /img             # Imágenes utilizadas (IA, fondo, ruido, etc.)
+├── index.html       # Estructura principal de la aplicación
+├── style.css        # Estilos, diseño visual y responsive
+├── app.js           # Lógica del juego e interacción
+└── img/
+    ├── ia.png       # Imagen o avatar utilizado por el juego
+    ├── ...          # Otros recursos visuales
 
-🎮 ¿Cómo jugar?
 
-Escribe un número entre 1 y 10.
 
-Presiona Intentar.
+Funciones principales
 
-El sistema te dirá si el número secreto es mayor o menor.
-
-¡Sigue adivinando hasta acertar!
-
-Cuando ganes, podrás iniciar una nueva partida con Nuevo juego.
-
-🔧 Funciones principales del proyecto
 generarNumeroSecreto()
 
-Genera un número aleatorio que no se haya repetido antes.
+Genera un número aleatorio dentro del rango establecido y evita seleccionar números que ya hayan sido utilizados durante la partida.
 
 verificarIntento()
 
-Compara el número ingresado con el número secreto y da pistas.
+Compara el número introducido por el usuario con el número secreto. Según el resultado, muestra una pista indicando si el número secreto es mayor, menor o igual al intento.
 
 reiniciarJuego()
 
-Reinicia todo para comenzar otra partida.
+Restablece el estado de la partida, limpia los valores anteriores y prepara un nuevo número secreto.
 
-🖥️ Vista previa
+Instalación local
 
-Puedes abrir index.html directamente en tu navegador para probar el juego.
+Para ejecutar el proyecto en tu computadora no necesitas instalar dependencias externas.
+
+Bash
+
+
+git clone https://github.com/TU-USUARIO/JUEGO-SECRETO-IA.git
+cd JUEGO-SECRETO-IA
+
+
+
+Después, abre el archivo index.html en tu navegador. Para una mejor experiencia durante el desarrollo, puedes utilizar la extensión Live Server de Visual Studio Code.
+
+Ejecutar con Visual Studio Code
+
+Abre la carpeta del proyecto en Visual Studio Code. Comprueba que los archivos index.html, style.css, app.js y la carpeta img estén ubicados correctamente. Luego haz clic derecho sobre index.html y selecciona Open with Live Server.
+
+Si no utilizas Live Server, también puedes abrir index.html directamente desde el explorador de archivos.
+
+Personalización
+
+Puedes modificar fácilmente el rango del juego, los textos, los colores y las imágenes. Para cambiar el rango máximo, revisa la constante o variable utilizada en app.js y actualiza también el texto mostrado en index.html para que las instrucciones coincidan con la nueva configuración.
+
+Los colores, tamaños, botones y distribución visual se pueden personalizar desde style.css. Las imágenes utilizadas por la interfaz deben mantenerse dentro de la carpeta img y sus rutas deben coincidir con las referencias escritas en el HTML o CSS.
+
+Mejoras futuras
+
+Algunas funciones que podrían incorporarse en futuras versiones son:
+
+•
+Diferentes niveles de dificultad.
+
+•
+Rangos numéricos configurables.
+
+•
+Sistema de puntuación.
+
+•
+Registro del mejor resultado.
+
+•
+Historial visual de intentos.
+
+•
+Efectos de sonido y animaciones.
+
+•
+Modo contrarreloj.
+
+•
+Modo oscuro y otras opciones de personalización.
+
+Autor
+
+Proyecto desarrollado como práctica de programación frontend y experimentación con interfaces interactivas.
+
+Licencia
+
+Este proyecto está disponible para fines educativos y personales. Puedes modificarlo y adaptarlo según tus necesidades.
+
+
