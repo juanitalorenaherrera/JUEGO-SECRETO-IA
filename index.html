@@ -1,39 +1,80 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Inter:wght@400;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <title>JS Game</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Juego del número secreto: descubre el número oculto entre 1 y 10.">
+  <title>Juego del número secreto | Desafío IA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
 </head>
-
 <body>
+  <main class="page-shell">
+    <section class="game-card" aria-labelledby="game-title">
+      <div class="hero-copy">
+        <div class="badge" aria-label="Juego creado con inteligencia artificial">
+          <span class="badge-dot" aria-hidden="true"></span>
+          DESAFÍO IA
+        </div>
+        <h1 id="game-title">Juego del número secreto</h1>
+        <p class="subtitle">¿Puedes descubrir el número que estoy pensando?</p>
+      </div>
 
-    <div class="container">
-        <div class="container__contenido">
-            <div class="container__informaciones">
-                <div class="container__texto">
-                    <h1></h1>
-                    <p class="texto__parrafo"></p>
-                </div>
-                <input type="number" id="valorUsuario" min="1" max="10" class="container__input">
-                <div class="chute container__botones">
-                    <button onclick="verificarIntento();" class="container__boton">Intentar</button>
-                    <button onclick="reiniciarJuego();" class="container__boton" id="reiniciar" disabled>Nuevo juego</button>
-                </div>
-        <img src="img/ia.png" class="container__imagen-persona" />
+      <div class="game-layout">
+        <div class="robot-panel" aria-hidden="true">
+          <div class="robot-glow"></div>
+          <div class="robot-face">
+            <span class="robot-eye"></span>
+            <span class="robot-eye"></span>
+            <span class="robot-mouth"></span>
+          </div>
+          <span class="robot-label">IA</span>
+        </div>
 
-    </div>
+        <div class="game-panel">
+          <div class="range-row">
+            <span>Rango secreto</span>
+            <strong>1 — 10</strong>
+          </div>
 
+          <div id="statusBox" class="status-box status-neutral" role="status" aria-live="polite">
+            <span id="statusIcon" class="status-icon" aria-hidden="true">?</span>
+            <div>
+              <strong id="statusTitle">Haz tu primer intento</strong>
+              <p id="statusMessage">Escribe un número entero entre 1 y 10.</p>
+            </div>
+          </div>
 
+          <form id="guessForm" novalidate>
+            <label for="valorUsuario">Tu número</label>
+            <div class="input-row">
+              <input id="valorUsuario" name="guess" type="number" min="1" max="10" step="1" inputmode="numeric" placeholder="Ej. 7" autocomplete="off" aria-describedby="inputHint inputError" required>
+              <button class="primary-button" type="submit">Intentar <span aria-hidden="true">→</span></button>
+            </div>
+            <p id="inputHint" class="input-hint">Solo números enteros del 1 al 10.</p>
+            <p id="inputError" class="input-error" role="alert"></p>
+          </form>
 
-    <script src="app.js"></script>
+          <div class="stats" aria-label="Estadísticas de la partida">
+            <div class="stat-item"><span>Intentos</span><strong id="attemptCount">0</strong></div>
+            <div class="stat-item"><span>Récord</span><strong id="bestScore">—</strong></div>
+            <div class="stat-item"><span>Estado</span><strong id="gameState">En juego</strong></div>
+          </div>
 
+          <div class="history-section">
+            <div class="history-heading"><span>Números probados</span><span id="historyCount">0/10</span></div>
+            <div id="guessHistory" class="guess-history" aria-live="polite"><span class="empty-history">Todavía no has probado ningún número.</span></div>
+          </div>
+
+          <button id="reiniciar" class="secondary-button" type="button">↻ Nuevo juego</button>
+        </div>
+      </div>
+    </section>
+    <p class="footer-note">Piensa, prueba y encuentra el número secreto.</p>
+  </main>
 </body>
-
 </html>
+
