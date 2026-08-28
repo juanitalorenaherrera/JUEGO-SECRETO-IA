@@ -112,14 +112,6 @@ Instalación local
 
 Para ejecutar el proyecto en tu computadora no necesitas instalar dependencias externas.
 
-Bash
-
-
-git clone https://github.com/TU-USUARIO/JUEGO-SECRETO-IA.git
-cd JUEGO-SECRETO-IA
-
-
-
 Después, abre el archivo index.html en tu navegador. Para una mejor experiencia durante el desarrollo, puedes utilizar la extensión Live Server de Visual Studio Code.
 
 Ejecutar con Visual Studio Code
